@@ -54,7 +54,9 @@ class _IntroPageState extends State<IntroPage> {
               Expanded(
                 child: RaisedButton(
                   child: Text("login".toUpperCase()),
-                  onPressed: (){},
+                  onPressed: (){
+                    Navigator.pushReplacementNamed(context, "login");
+                  },
                 ),
               ),
               const SizedBox(width: 20.0),
