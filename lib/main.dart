@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:khalticlone/res/colors.dart';
+import 'package:khalticlone/ui/pages/auth/login.dart';
+import 'package:khalticlone/ui/pages/home.dart';
 import 'package:khalticlone/ui/pages/intro.dart';
 
 void main() => runApp(MyApp());
@@ -10,9 +13,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: primary,
+        accentColor: accent
       ),
-      home: IntroPage(),
+      routes: {
+        "/": (_) => IntroPage(),
+        "home": (_) => HomePage(),
+        "login": (_) => LoginPage(),
+      },
     );
   }
 }
