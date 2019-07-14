@@ -1,6 +1,9 @@
-# khalticlone
+# Flutter Khalti Clone (WIP)
+A flutter app cloning Khalti Apps UI interactions.
 
-A new Flutter project.
+## Implemented Screens
+<img src="screenshots/onboarding.png" height="480px" > <img src="screenshots/login.png" height="480px" > <img src="screenshots/reset-password.png" height="480px" > <img src="screenshots/register.png" height="480px" >  
+
 
 ## Getting Started
 
