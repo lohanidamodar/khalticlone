@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:khalticlone/res/colors.dart';
 import 'package:khalticlone/ui/pages/auth/login.dart';
 import 'package:khalticlone/ui/pages/auth/recover.dart';
+import 'package:khalticlone/ui/pages/auth/register.dart';
 import 'package:khalticlone/ui/pages/home.dart';
 import 'package:khalticlone/ui/pages/intro.dart';
 
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
         "home": (_) => HomePage(),
         "login": (_) => LoginPage(),
         "recover": (_) => RecoverPasswordPage(),
+        "register": (_) => RegisterPage(),
       },
     );
   }

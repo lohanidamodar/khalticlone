@@ -92,7 +92,9 @@ class LoginPage extends StatelessWidget {
                         color: Theme.of(context).primaryColor,
                         fontWeight: FontWeight.w600
                       ),),
-                      onTap: (){},
+                      onTap: (){
+                        Navigator.pushNamed(context, 'register');
+                      },
                     ),
                     const SizedBox(height: 20.0),
                   ],
