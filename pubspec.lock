@@ -14,7 +14,7 @@ packages:
       name: boolean_selector
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.4"
+    version: "1.0.5"
   charcode:
     dependency: transitive
     description:
@@ -41,6 +41,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_khalti:
+    dependency: "direct main"
+    description:
+      name: flutter_khalti
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.2.0"
   flutter_page_indicator:
     dependency: transitive
     description:
@@ -87,7 +94,7 @@ packages:
       name: pedantic
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.7.0"
+    version: "1.8.0+1"
   quiver:
     dependency: transitive
     description:
