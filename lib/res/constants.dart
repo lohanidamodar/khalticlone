@@ -1,4 +1,5 @@
 import 'package:khalticlone/model/introitem.dart';
+const String logo = "assets/logo.png";
 
 final List<IntroItem> introItems = [
   IntroItem(image: "assets/logo.png",title: "Load Fund", subtitle: "Load funds in your khalti from your Bank account"),
