@@ -10,6 +10,7 @@ class IntroPage extends StatefulWidget {
 
 class _IntroPageState extends State<IntroPage> {
   int currentIndex;
+  final SwiperController _controller = SwiperController();
 
   @override
   void initState() { 
@@ -25,9 +26,10 @@ class _IntroPageState extends State<IntroPage> {
         children: <Widget>[
           Expanded(
             child: Swiper(
+              controller: _controller,
               itemCount: introItems.length,
               autoplay: true,
-              autoplayDelay: 3000,
+              autoplayDelay: 5000,
               index: currentIndex,
               onIndexChanged: (index){
                 setState(() {
@@ -63,7 +65,7 @@ class _IntroPageState extends State<IntroPage> {
               Expanded(
                 child: RaisedButton(
                   child: Text("create account".toUpperCase()),
-                  onPressed: (){},
+                  onPressed: () => Navigator.pushReplacementNamed(context, 'register'),
                 ),
               ),
               const SizedBox(width: 20.0),
@@ -77,14 +79,16 @@ class _IntroPageState extends State<IntroPage> {
                 IconButton(
                   color: Colors.white,
                   icon: Icon(Icons.arrow_back, size: 20.0,),
-                  onPressed: (){},
+                  onPressed: (){
+                    _controller.previous();
+                  },
                 ),
               if(!_isFirstPage())
               Spacer(),
               IconButton(
                 color: Colors.white,
                 icon: Icon(_isLastPage() ? Icons.check_circle : Icons.close, size: 20.0,),
-                onPressed: (){},
+                onPressed: () => Navigator.pushReplacementNamed(context, 'register'),
               ),
               if(!_isLastPage())
               Spacer(),
@@ -92,7 +96,9 @@ class _IntroPageState extends State<IntroPage> {
               IconButton(
                 color: Colors.white,
                 icon: Icon(Icons.arrow_forward, size: 20.0,),
-                onPressed: (){},
+                onPressed: (){
+                  _controller.next();
+                },
               ),
             ],
           ),
