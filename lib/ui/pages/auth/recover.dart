@@ -3,7 +3,7 @@ import 'package:khalticlone/res/colors.dart';
 import 'package:khalticlone/res/constants.dart';
 import 'package:khalticlone/res/typography.dart';
 
-class LoginPage extends StatelessWidget {
+class RecoverPasswordPage extends StatelessWidget {
   @override
   Widget build(BuildContext context){
     return Scaffold(
@@ -23,72 +23,40 @@ class LoginPage extends StatelessWidget {
               child: SingleChildScrollView(
                 child: Column(
                   children: <Widget>[
-                    Row(
-                      children: <Widget>[
-                        Icon(Icons.perm_contact_calendar),
-                        const SizedBox(width: 10.0),
-                        Expanded(
-                          child: TextField(
-                            decoration: InputDecoration(
-                              hintText: "Mobile or Email"
-                            ),
-                          ),
-                        ),
-                      ],
+                    Text("Recover Password",style: TextStyle(
+                      fontSize: 20.0
+                    ),),
+                    const SizedBox(height: 10.0),
+                    Text("We will send the Confirmation Code through SMS\nPlease type your Mobile number below."),
+                    const SizedBox(height: 20.0),
+                    TextField(
+                      decoration: InputDecoration(
+                        hintText: "Mobile Number"
+                      ),
                     ),
                     const SizedBox(height: 20.0),
-                    Row(
-                      children: <Widget>[
-                        Icon(Icons.lock),
-                        const SizedBox(width: 10.0),
-                        Expanded(
-                          child: TextField(
-                            obscureText: true,
-                            decoration: InputDecoration(
-                              hintText: "Password",
-                              suffixIcon: GestureDetector(
-                                child: Icon(Icons.remove_red_eye),
-                                onTap: (){},
-                              )
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 30.0),
-                    Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 16.0),
+                    SizedBox(
                       width:double.infinity,
                       child: RaisedButton(
                         color: Theme.of(context).primaryColor,
                         textColor: Colors.white,
-                        child: Text("Login".toUpperCase()),
+                        child: Text("Recover".toUpperCase()),
                         onPressed: (){},
                       )
-                    ),
-                    const SizedBox(height: 20.0),
-                    GestureDetector(
-                      child: Text("Forgot Password".toUpperCase(), style: TextStyle(
-                        color: Theme.of(context).primaryColor,
-                        fontWeight: FontWeight.w600
-                      ),),
-                      onTap: (){
-                        Navigator.pushNamed(context, 'recover');
-                      },
                     ),
                     const SizedBox(height: 20.0),
                     Row(
                       children: <Widget>[
                         Expanded(child: Divider(color: Colors.grey.shade600,)),
                         const SizedBox(width: 10.0),
-                        Text("Not a member?",style: smallText,),
+                        Text("Having problems?", style: smallText,),
                         const SizedBox(width: 10.0),
                         Expanded(child: Divider(color: Colors.grey.shade600,)),
                       ],
                     ),
                     const SizedBox(height: 20.0),
                     GestureDetector(
-                      child: Text("Create Account".toUpperCase(), style: TextStyle(
+                      child: Text("Contact Us".toUpperCase(), style: TextStyle(
                         color: Theme.of(context).primaryColor,
                         fontWeight: FontWeight.w600
                       ),),
