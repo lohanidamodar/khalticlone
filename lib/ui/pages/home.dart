@@ -1,7 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:khalticlone/res/typography.dart';
+import 'package:khalticlone/ui/widgets/bottom_expandable_app_bar/bottom_expandable_app_bar.dart';
+import 'package:khalticlone/ui/widgets/bottom_expandable_app_bar/controller.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin {
+  BottomBarController controller;
+
+  @override
+    void initState() {
+      super.initState();
+      controller = BottomBarController(vsync: this, dragLength: 550, snap: true);
+    }
+
   @override
   Widget build(BuildContext context){
     return Scaffold(
@@ -34,6 +49,76 @@ class HomePage extends StatelessWidget {
           )
         ],
       ),
+      bottomNavigationBar: GestureDetector(
+        onVerticalDragUpdate: controller.onDrag,
+        onVerticalDragEnd: controller.onDragEnd,
+        child: _buildBottomBar(context),
+      ),
+    );
+  }
+
+  BottomExpandableAppBar _buildBottomBar(BuildContext context) {
+    return BottomExpandableAppBar(
+      attachSide: Side.Top,
+      controller: controller,
+      expandedHeight: MediaQuery.of(context).size.height - 75,
+      horizontalMargin: 16,
+      appBarHeight: 50,
+      bottomOffset: 0,
+      expandedBackColor: Colors.white,
+      expandedBody: Center(
+        child: Text("Profile"),
+      ),
+      bottomAppBarColor: Colors.grey.shade200,
+      bottomAppBarBody: Row(
+        mainAxisSize: MainAxisSize.max,
+        children: <Widget>[
+          Expanded(
+            child: _buildBottomMenuItem(
+              icon: Icon(Icons.home),
+              label: "Home",
+              onTap: (){}
+            ),
+          ),
+          Expanded(
+            child: _buildBottomMenuItem(
+              icon: Icon(Icons.card_giftcard),
+              label: "Bazaar",
+              onTap: (){}
+            ),
+          ),
+          Expanded(
+            child: _buildBottomMenuItem(
+              icon: Icon(Icons.list),
+              label: "Transactions",
+              onTap: (){}
+            ),
+          ),
+          Expanded(
+            child: _buildBottomMenuItem(
+              icon: Icon(Icons.more_horiz),
+              label: "More",
+              onTap: () => controller.open()
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  MaterialButton _buildBottomMenuItem({Widget icon, String label, Function onTap}) {
+    return MaterialButton(
+      height: 30,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          icon,
+          Text(label, style: TextStyle(
+            fontSize: 10
+          ),)
+        ],
+      ),
+      onPressed: onTap,
     );
   }
 
