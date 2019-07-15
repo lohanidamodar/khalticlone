@@ -5,6 +5,7 @@ import 'package:khalticlone/ui/pages/auth/recover.dart';
 import 'package:khalticlone/ui/pages/auth/register.dart';
 import 'package:khalticlone/ui/pages/home.dart';
 import 'package:khalticlone/ui/pages/intro.dart';
+import 'package:khalticlone/ui/widgets/slide_right_route.dart';
 
 void main() => runApp(MyApp());
 
@@ -23,9 +24,21 @@ class MyApp extends StatelessWidget {
       routes: {
         "/": (_) => IntroPage(),
         "home": (_) => HomePage(),
-        "login": (_) => LoginPage(),
-        "recover": (_) => RecoverPasswordPage(),
-        "register": (_) => RegisterPage(),
+      },
+      onGenerateRoute: (RouteSettings settings) {
+        switch(settings.name) {
+          case "login":
+            return SlideRightRoute(widget: LoginPage());
+            break;
+          case "recover":
+            return SlideRightRoute(widget: RecoverPasswordPage());
+            break;
+          case "register":
+            return SlideRightRoute(widget: RegisterPage());
+            break;
+          default:
+            return null;
+        }
       },
     );
   }

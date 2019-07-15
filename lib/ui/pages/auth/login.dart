@@ -63,7 +63,7 @@ class LoginPage extends StatelessWidget {
                         color: Theme.of(context).primaryColor,
                         textColor: Colors.white,
                         child: Text("Login".toUpperCase()),
-                        onPressed: (){},
+                        onPressed: () => Navigator.pushReplacementNamed(context, 'home'),
                       )
                     ),
                     const SizedBox(height: 20.0),
