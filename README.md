@@ -1,8 +1,11 @@
 # Flutter Khalti Clone (WIP)
 A flutter app cloning Khalti Apps UI interactions.
 
+## Expandable Bottom App Bar
+Implementing the expandable bottom app bar was a challenge, and luckily I found [this](https://github.com/rIIh/expandable-bottom-bar) repository. I just had to make few modifications to make it look and work near about as implemented in original Khalti app.
+
 ## Implemented Screens
-<img src="screenshots/onboarding.png" height="480px" > <img src="screenshots/login.png" height="480px" > <img src="screenshots/reset-password.png" height="480px" > <img src="screenshots/register.png" height="480px" >  
+<img src="screenshots/onboarding.png" height="480px" > <img src="screenshots/login.png" height="480px" > <img src="screenshots/reset-password.png" height="480px" > <img src="screenshots/register.png" height="480px" >  <img src="screenshots/bottom-expandable-appbar.gif" height="480px" >  
 
 
 ## Getting Started
