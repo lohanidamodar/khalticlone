@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:khalticlone/res/typography.dart';
+import 'package:khalticlone/ui/pages/menu_page.dart';
 import 'package:khalticlone/ui/widgets/bottom_expandable_app_bar/bottom_expandable_app_bar.dart';
 import 'package:khalticlone/ui/widgets/bottom_expandable_app_bar/controller.dart';
 
@@ -62,13 +63,11 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
       attachSide: Side.Top,
       controller: controller,
       expandedHeight: MediaQuery.of(context).size.height - 75,
-      horizontalMargin: 16,
+      horizontalMargin: 0,
       appBarHeight: 50,
       bottomOffset: 0,
       expandedBackColor: Colors.white,
-      expandedBody: Center(
-        child: Text("Profile"),
-      ),
+      expandedBody: MenuPage(),
       bottomAppBarColor: Colors.grey.shade200,
       bottomAppBarBody: Row(
         mainAxisSize: MainAxisSize.max,
