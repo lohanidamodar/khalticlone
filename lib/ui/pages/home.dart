@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:khalticlone/res/typography.dart';
 import 'package:khalticlone/ui/pages/menu_page.dart';
 import 'package:khalticlone/ui/widgets/bottom_expandable_app_bar/bottom_expandable_app_bar.dart';
@@ -154,13 +155,13 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Spacer(),
-          _buildHeaderItem(icon: Icons.account_balance_wallet, label: "Load Fund"),
+          _buildHeaderItem(icon: FontAwesomeIcons.wallet, label: "Load Fund"),
           Spacer(),
-          _buildHeaderItem(icon: Icons.mobile_screen_share, label: "Send/Request"),
+          _buildHeaderItem(icon: FontAwesomeIcons.mobileAlt, label: "Send/Request"),
           Spacer(),
-          _buildHeaderItem(icon: Icons.code,label: "Scan & Pay"),
+          _buildHeaderItem(icon: FontAwesomeIcons.qrcode,label: "Scan & Pay"),
           Spacer(),
-          _buildHeaderItem(icon: Icons.collections,label: "Bank Transfer"),
+          _buildHeaderItem(icon: FontAwesomeIcons.coins,label: "Bank Transfer"),
           Spacer(),
         ],
       ),
@@ -177,7 +178,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                 shape: BoxShape.circle,
                 color: Colors.white
               ),
-              child: Icon(icon,size: 30,),
+              child: Icon(icon,size: 30, color: Colors.purple.shade300,),
             ),
             const SizedBox(height: 5.0),
             Text(label, style: smallText,),
