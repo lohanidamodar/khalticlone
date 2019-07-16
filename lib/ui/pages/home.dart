@@ -113,7 +113,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
         children: <Widget>[
           icon,
           Text(label, style: TextStyle(
-            fontSize: 10
+            fontSize: 9
           ),)
         ],
       ),

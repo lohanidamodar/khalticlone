@@ -89,6 +89,12 @@ class MenuPage extends StatelessWidget {
           ),
           ListTile(title: Text("About"), leading: Icon(Icons.info),),
           ListTile(title: Text("Logout"), leading: Icon(Icons.exit_to_app),),
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 60.0,),
+            color: Colors.grey.shade200,
+            child: Text("2.20.00"),
+          )
         ],
       ),
     );
