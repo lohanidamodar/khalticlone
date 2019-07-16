@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:khalticlone/model/home_menu_item.dart';
+import 'package:khalticlone/res/constants.dart';
 import 'package:khalticlone/res/typography.dart';
 import 'package:khalticlone/ui/pages/menu_page.dart';
 import 'package:khalticlone/ui/widgets/bottom_expandable_app_bar/bottom_expandable_app_bar.dart';
@@ -39,16 +41,11 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
             ],
           ),
           _buildHeading("Utility Payments"),
+          _buildUtilityPaymentsGrid(),
           _buildDivider(),
           _buildHeading("Bookings"),
+          _buildBookingsGrid(),
           _buildDivider(height: 8.0),
-          SliverList(
-            delegate: SliverChildBuilderDelegate((_,index){
-              return ListTile(
-                title: Text("Item $index"),
-              );
-            }),
-          )
         ],
       ),
       bottomNavigationBar: GestureDetector(
@@ -57,6 +54,40 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
         child: _buildBottomBar(context),
       ),
     );
+  }
+
+  SliverPadding _buildBookingsGrid() {
+    return SliverPadding(
+          padding: const EdgeInsets.all(16.0),
+          sliver: SliverGrid(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 4,
+              crossAxisSpacing: 16.0,
+              mainAxisSpacing: 16.0
+            ),
+            delegate: SliverChildBuilderDelegate((_,index){
+              HomeMenuItem item = homeBookingsItems[index];
+              return _buildMenuItem(icon: item.icon, label: item.title,subtitle: item.subtitle );
+            },childCount: homeBookingsItems.length),
+          ),
+        );
+  }
+
+  SliverPadding _buildUtilityPaymentsGrid() {
+    return SliverPadding(
+          padding: const EdgeInsets.all(16.0),
+          sliver: SliverGrid(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 4,
+              crossAxisSpacing: 16.0,
+              mainAxisSpacing: 16.0
+            ),
+            delegate: SliverChildBuilderDelegate((_,index){
+              HomeMenuItem item = homeMenuItems[index];
+              return _buildMenuItem(icon: item.icon, label: item.title,subtitle: item.subtitle );
+            },childCount: homeMenuItems.length),
+          ),
+        );
   }
 
   BottomExpandableAppBar _buildBottomBar(BuildContext context) {
@@ -129,7 +160,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
         child: Container(
           child: Text(title, style: TextStyle(
             color: Colors.black,
-            fontWeight: FontWeight.bold
+            fontWeight: FontWeight.w600
           ),),
         ),
       ),
@@ -184,5 +215,28 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
             Text(label, style: smallText,),
           ],
         );
+  }
+  Widget _buildMenuItem({IconData icon, String label, String subtitle}) {
+    return InkWell(
+      onTap: (){},
+      child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Icon(icon,size: 28, color: Colors.purple.shade300,),
+              const SizedBox(height: 10.0),
+              Text(label, style: smallText,),
+              if(subtitle != null)
+              const SizedBox(height: 5.0),
+              if(subtitle != null)
+              Container(
+                padding: const EdgeInsets.symmetric(vertical: 2.0, horizontal: 4.0,),
+                color: Colors.grey.shade200,
+                child: Text(subtitle, textAlign: TextAlign.center, style: smallText.copyWith(
+                  fontSize: 8.0
+                ),)
+              )
+            ],
+          ),
+    );
   }
 }
