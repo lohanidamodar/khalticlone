@@ -56,16 +56,15 @@ class LoginPage extends StatelessWidget {
                     ),
                     const SizedBox(height: 30.0),
                     Container(
-                        margin: const EdgeInsets.symmetric(horizontal: 16.0),
-                        width: double.infinity,
-                        child: RaisedButton(
-                          color: Theme.of(context).primaryColor,
-                          textColor: Colors.white,
-                          child: Text("Login".toUpperCase()),
-                          onPressed: () {
-                            Navigator.pushNamed(context, 'payment');
-                          },
-                        )),
+                      margin: const EdgeInsets.symmetric(horizontal: 16.0),
+                      width:double.infinity,
+                      child: RaisedButton(
+                        color: Theme.of(context).primaryColor,
+                        textColor: Colors.white,
+                        child: Text("Login".toUpperCase()),
+                        onPressed: () => Navigator.pushReplacementNamed(context, 'home'),
+                      )
+                    ),
                     const SizedBox(height: 20.0),
                     GestureDetector(
                       child: Text(
