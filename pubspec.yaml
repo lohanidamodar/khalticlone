@@ -10,6 +10,7 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^0.1.2
   flutter_swiper: ^1.1.6
+  flutter_khalti: ^0.2.0
   font_awesome_flutter: ^8.4.0
 
 dev_dependencies:
